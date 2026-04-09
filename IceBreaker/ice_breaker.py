@@ -1,14 +1,9 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
-from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 
 from thrid_parties.linkedin import scrape_linkedin_profile
-
-information = """
-
-"""
 
 if __name__ == '__main__':
     load_dotenv()
@@ -29,5 +24,5 @@ if __name__ == '__main__':
     chain = summary_prompt_template | llm | StrOutputParser()
     linked_data = scrape_linkedin_profile(linkedin_profile_url="https://gist.githubusercontent.com/emarco177/0d6a3f93dd06634d95e46a2782ed7490/raw/fad4d7a87e3e934ad52ba2a968bad9eb45128665/eden-marco.json")
 
-    res = chain.invoke(input={"information": information})
+    res = chain.invoke(input={"information": linked_data})
     print(res)
