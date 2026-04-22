@@ -27,9 +27,6 @@ information = """
 def main():
     load_dotenv()
 
-    hyerim='hi'
-    print(f""" hello {hyerim}""")
-
     summary_template = """
 {information}의 설명을 보고 아래 정보를 요약해줘.
 1. 짧은 요약
