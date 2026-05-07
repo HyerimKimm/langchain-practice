@@ -5,19 +5,21 @@ from langchain.agents import create_agent
 from langchain.tools import tool
 from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
+from tavily import TavilyClient
 
+tavily = TavilyClient();
 
 @tool
 def search(query: str) -> str: 
     """
-    인터넷 검색을 하는 툴툴
-    파라미터터: 
+    인터넷 검색을 하는 툴
+    파라미터: 
         query: 검색할 질문
     Returns:
         검색 결과
     """
     print(f"{query}을 검색합니다.")
-    return "서울 날씨는 화창합니다."
+    return tavily.search(query=query)
 
 llm = ChatOpenAI()
 tools = [search]
