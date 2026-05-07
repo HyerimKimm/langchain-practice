@@ -6,6 +6,7 @@ from langchain.tools import tool
 from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
 
+
 @tool
 def search(query: str) -> str: 
     """
