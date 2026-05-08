@@ -21,7 +21,7 @@ def search(query: str) -> str:
     print(f"{query}을 검색합니다.")
     return tavily.search(query=query)
 
-llm = ChatOpenAI('gpt-5')
+llm = ChatOpenAI(model="gpt-5")
 tools = [search]
 agent = create_agent(model=llm, tools=tools)
 
