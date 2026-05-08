@@ -27,7 +27,7 @@ agent = create_agent(model=llm, tools=tools)
 
 def main():
     print("Hello from react-search-agent!")
-    result = agent.invoke({"messages": HumanMessage(content="서울 날씨는 어때?")})
+    result = agent.invoke({"messages": HumanMessage(content="LinkedIn에서 서울/경기 지역의 AI Engineer 채용 공고 3개를 검색하고 상세 정보를 나열해줘.")})
     print(result)
 
 if __name__ == "__main__":
