@@ -1,3 +1,7 @@
+from typing import List
+
+from pydantic import BaseModel, Field
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -7,6 +11,8 @@ from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
 from langchain_tavily import TavilySearch
 
+class Source(BaseModel):
+    """Agent가 사용할 source를 저장하는 스키마(Schema) 입니다."""
 
 llm = ChatOpenAI(model="gpt-5")
 tools = [TavilySearch()]
