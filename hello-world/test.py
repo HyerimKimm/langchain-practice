@@ -1,10 +1,8 @@
-number = input("정수입력> ")
+class Test:
+	def __init__(self, name):
+		self.name = name
+		print("{} - 생성되었습니다".format(self.name))
+	def __del__(self):
+		print("{} - 파괴되었습니다".format(self.name))
 
-# 마지막 자리 숫자 추출
-last_character = number[-1]
-
-last_number = int(last_character)
-
-#짝수 확인
-if last_number % 2 == 0:
-		print("짝수입니다")
+test = Test("A")
