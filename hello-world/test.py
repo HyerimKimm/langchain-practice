@@ -1,8 +1,6 @@
-class Test:
-	def __init__(self, name):
-		self.name = name
-		print("{} - 생성되었습니다".format(self.name))
-	def __del__(self):
-		print("{} - 파괴되었습니다".format(self.name))
+class CustopmException(Exception):
+	def __init__(self):
+		super().__init__()
+		print("CustopmException 예외가 발생했습니다.")
 
-test = Test("A")
+raise CustopmException()
