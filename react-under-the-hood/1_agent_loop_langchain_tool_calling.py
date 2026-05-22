@@ -5,6 +5,7 @@ load_dotenv()
 from langchain.chat_models import init_chat_model
 from langchain.tools import tool
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
+from langsmith import traceable
 
 MAX_ITERATIONS = 10
 MODEL = "qwen3:1.7b"
@@ -28,6 +29,7 @@ def apply_discount(price: float, discount_tier: str) -> float:
     return round(price * (1 - discount / 100), 2)
 
 # --- Agent Loop ---
+@traceable(name="LangChain Agent Loop")
 def run_agent(question: str) -> None:
     pass
 
